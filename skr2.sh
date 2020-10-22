@@ -1,2 +1,2 @@
 #! /usr/bin/env bash
-ps u | grep /usr/sbin/ > t2.txt
+ps -ax pid,command | grep /sbin/ | grep -v "grep" | awk '{print $1}' > task2.txt
