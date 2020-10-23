@@ -9,4 +9,4 @@ do
         art=`bc <<< "scale=3;$sum_exec_runtime/$nr_switches"`
         echo "ProcessID=$pid : Parent_ProcessID=$PPid : Average_Running_Time=$art"
     fi
-done | sort -n -t '=' -k 3 > t4.txt
+done | sort -n -t '=' -k 3 > text4.txt

@@ -8,7 +8,7 @@ do
     then
         echo $pid $command $mem
     fi
-done > t7.txt
+done > text7.txt
 sleep 1m
 for line in `ps -ax -o pid,command | awk '{print $1 "," $2}'`
 do
@@ -20,5 +20,5 @@ do
         answer=$(($new_mem - $last_mem))
         echo "PID: $Pid Command: $Command Memory: $answer"
     fi
-done | sort -n -t ':' -k 3 | head -3 > t7.txt
+done | sort -n -t ':' -k 3 | head -3 > text7.txt
 rm buffer.txt

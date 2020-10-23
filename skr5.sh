@@ -27,4 +27,4 @@ do
         sum=$runtime
         counter=1
     fi
-done < task4.txt > task5.txt
+done < text4.txt > text5.txt
