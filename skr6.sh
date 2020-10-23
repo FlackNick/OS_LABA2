@@ -1,16 +1,16 @@
 #! /usr/bin/env bash
-MaxSize=0
-Pid_of_MaxSize=0
+max_size=0
+pid_max_size=0
 for pid in $(ps -ax -o pid)
 do
-Size=`grep -s "VmSize" "/proc/"$pid"/status" | awk '{print $2}'`
-if [[ $Size -gt $MaxSize ]]
+size=`grep -s "VmSize" "/proc/"$pid"/status" | awk '{print $2}'`
+if [[ $size -gt $max_size ]]
 then
-MaxSize=$Size
-Pid_of_MaxSize=$pid
+max_size=$size
+pid_max_size=$pid
 fi
 done
-top -p $Pid_of_MaxSize -b -n 1 > buffer.txt
-vmSize=$(cat task6.txt | grep $Pid_of_MaxSize | awk '{print $5 }')
-echo "Pid:$Pid_of_MaxSize MEM in /proc $MaxSize MEM in top $vmSize" > t6.txt
+top -p $pid_max_size -b -n 1 > buffer.txt
+vm_size=$(cat buffer.txt | grep $pid_max_size | awk '{print $5 }')
+echo "Pid:$pid_max_size MEM in /proc $max_size MEM in top $vm_size" > t6.txt
 rm buffer.txt
