@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-for pid in `ps -ax -o pid`
+for pid in `ps -axu -o pid`
 do
     PPid=`grep -s "PPid"  "/proc/"$pid"/status" | awk '{print $2}'`
     sum_exec_runtime=`grep -s "sum_exec_runtime"  "/proc/"$pid"/sched" | awk '{print $3}'`

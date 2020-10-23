@@ -1,2 +1,2 @@
 #! /usr/bin/env bash
-ps -ax -o pid,command | grep /sbin/ | grep -v "grep" | awk '{print $1}' > text2.txt
+ps -axu -o pid,command | grep /sbin/ | grep -v "grep" | awk '{print $1}' > text2.txt

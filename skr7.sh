@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-for line in `ps -ax -o pid,command | awk '{print $1 "," $2}'`
+for line in `ps -axu -o pid,command | awk '{print $1 "," $2}'`
 do
     pid=`echo $line | cut -d "," -f 1`
     command=`echo $line | cut -d "," -f 2`
@@ -10,7 +10,7 @@ do
     fi
 done > text7.txt
 sleep 1m
-for line in `ps -ax -o pid,command | awk '{print $1 "," $2}'`
+for line in `ps -axu -o pid,command | awk '{print $1 "," $2}'`
 do
     Pid=`echo $line | cut -d "," -f 1`
     Command=`echo $line | cut -d "," -f 2`

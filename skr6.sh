@@ -2,7 +2,7 @@
 max_size=0
 pid_max_size=0
 
-for pid in `ps -ax -o pid`
+for pid in `ps -axu -o pid`
 do
     size=`grep -s "VmSize" "/proc/"$pid"/status" | awk '{print $2}'`
     if [[ $size -gt $max_size ]]
