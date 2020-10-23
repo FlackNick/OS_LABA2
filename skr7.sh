@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/bash
 for line in `ps -axu -o pid,command | awk '{print $1 "," $2}'`
 do
     pid=`echo $line | cut -d "," -f 1`

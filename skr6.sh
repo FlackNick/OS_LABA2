@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/bash
 max_size=0
 pid_max_size=0
 

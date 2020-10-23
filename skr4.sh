@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/bash
 for pid in `ps -axu -o pid`
 do
     PPid=`grep -s "PPid"  "/proc/"$pid"/status" | awk '{print $2}'`

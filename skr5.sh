@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/bash
 sum=0
 counter=0
 prev_ppid=-999
