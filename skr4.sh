@@ -6,7 +6,7 @@ sum_exec_runtime=`grep -s "sum_exec_runtime"  "/proc/"$pid"/sched" | awk '{print
 nr_switches=`grep -s "nr_switches"  "/proc/"$pid"/sched" | awk '{print $3}'`
 if [[ -n $nr_switches && -n $sum_exec_runtime ]]
 then
-art=$(bc <<< "scale=5; $sum_exec_runtime/$nr_switches")
+art=$(bc <<< "scale=3; $sum_exec_runtime/$nr_switches")
 echo "ProcessID=$pid : Parent_ProcessID=$PPid : Average_Running_Time=$art"
 fi
 done | sort -n -t = -k 3 > t4.txt
